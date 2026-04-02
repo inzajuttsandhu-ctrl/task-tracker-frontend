@@ -21,8 +21,8 @@ function App() {
 
   useEffect(() => {
     if (user) fetchTasks();
-  }, [user]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [user]);
   const fetchTasks = async () => {
     setLoading(true);
     const data = await getTasks(user.email);
